@@ -1,8 +1,10 @@
 export class FPS {
     static start() {
-        this.start      = performance.now();
-        this.frameCount = 0;
-        this.running    = true;
+        this.start         = null;
+        this.frameCount    = 0;
+        this.running       = true;
+        this.frames        = [];
+        this.prevFrameTime = null;
 
         console.log('Starting frame counter');
 
@@ -14,17 +16,34 @@ export class FPS {
 
         const
             elapsed = performance.now() - this.start,
+            sum     = this.frames.reduce((sum, time) => sum += time),
+            average = this.frames.length / (sum / 1000),
             fps     = this.frameCount / (elapsed / 1000);
 
         console.table({
             'Elapsed time' : elapsed,
             'Frames'       : this.frameCount,
-            'Average FPS'  : fps
+            'Frame sum'    : sum,
+            'Average FPS 1'  : fps,
+            'Average FPS 2'  : average
         });
+
+        console.log(this.frames);
     }
 
     static frameCounter() {
-        FPS.frameCount++;
+        const time = performance.now();
+
+        if (FPS.start === null) {
+            FPS.start = time;
+            FPS.prevFrameTime = time;
+        }
+        else {
+            FPS.frameCount++;
+            FPS.frames.push(time - FPS.prevFrameTime);
+        }
+
+        FPS.prevFrameTime = time;
 
         if (FPS.running) {
             requestAnimationFrame(FPS.frameCounter)
@@ -55,7 +74,7 @@ export class RenderTimer {
 }
 
 export class Scroller {
-    static scroll({ element, distance = 5000, speed = 10, callback }) {
+    static scroll({ element, distance = 50000, speed = 5, maxSpeed = 250, acceleration = .5, callback }) {
         let scrollTop = 0;
 
         console.log('Starting to scroll', element);
@@ -63,6 +82,10 @@ export class Scroller {
         const intervalId = setInterval(() => {
             element.scrollTop = scrollTop;
             scrollTop += speed;
+
+            if (speed < maxSpeed) {
+                speed += acceleration;
+            }
 
             if (scrollTop > distance) {
                 clearInterval(intervalId);
