@@ -1,7 +1,7 @@
-import { RenderTimer, FPS, Scroller } from '../measuring/util.js';
+import { RenderTimer, FPS, Scroller } from '../util/util.js';
 
 async function init() {
-    const response = await fetch('../data/10000.json');
+    const response = await fetch('../util/10000.json');
     const json = await response.json();
 
     RenderTimer.start({

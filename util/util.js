@@ -54,6 +54,7 @@ export class FPS {
 export class RenderTimer {
     static start({ sync = true, callback }) {
         this.start = performance.now();
+        this.running = true;
 
         console.log('Starting initial rendering measurement');
 
@@ -65,22 +66,32 @@ export class RenderTimer {
     }
 
     static stop() {
-        const elapsed = performance.now() - this.start;
+        if (this.running) {
+            const elapsed = performance.now() - this.start;
 
-        console.table({
-            'Initial rendering (ms)' : elapsed
-        });
+            console.table({
+                'Initial rendering (ms)' : elapsed
+            });
+
+            this.running = false;
+        }
     }
 }
 
 export class Scroller {
-    static scroll({ element, distance = 50000, speed = 5, maxSpeed = 250, acceleration = .5, callback }) {
+    static scroll({ element, distance = 50000, speed = 5, maxSpeed = 250, acceleration = .5, callback, scrollFn }) {
         let scrollTop = 0;
 
         console.log('Starting to scroll', element);
 
         const intervalId = setInterval(() => {
-            element.scrollTop = scrollTop;
+            if (scrollFn) {
+                scrollFn(scrollTop)
+            }
+            else {
+                element.scrollTop = scrollTop;
+            }
+
             scrollTop += speed;
 
             if (speed < maxSpeed) {

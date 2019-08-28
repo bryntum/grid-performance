@@ -1,8 +1,10 @@
-import { Grid } from './grid.module.js';
-import { RenderTimer, FPS, Scroller } from '../measuring/util.js';
+import { Grid } from './js/grid.module.js';
+import { RenderTimer, FPS, Scroller } from '../util/util.js';
+
+window.bryntum.DISABLE_DEBUG = true;
 
 async function init() {
-    const response = await fetch('../data/10000.json');
+    const response = await fetch('../util/10000.json');
     const json = await response.json();
 
     RenderTimer.start({
