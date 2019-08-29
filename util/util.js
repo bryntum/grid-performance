@@ -1,4 +1,10 @@
+/**
+ * Utility class that measures FPS.
+ */
 export class FPS {
+    /**
+     * Start measuring
+     */
     static start() {
         this.start = null;
         this.frameCount = 0;
@@ -11,6 +17,9 @@ export class FPS {
         requestAnimationFrame(this.frameCounter);
     }
 
+    /**
+     * Stop measuring and print the result to console
+     */
     static stop() {
         this.running = false;
 
@@ -31,6 +40,7 @@ export class FPS {
         console.log(this.frames);
     }
 
+    // Internal function that counts animation frames
     static frameCounter() {
         const time = performance.now();
 
@@ -50,7 +60,16 @@ export class FPS {
     }
 }
 
+/**
+ * Utility class that measures initial rendering time (actually it times whatever).
+ */
 export class RenderTimer {
+    /**
+     * Start measuring. In `sync` mode it will call the callback and then stop the timer.
+     * When not in `sync` mode you should manually call `stop()
+     * @param {Boolean} sync
+     * @param {Function} callback
+     */
     static start({ sync = true, callback }) {
         this.start = performance.now();
         this.running = true;
@@ -64,6 +83,9 @@ export class RenderTimer {
         }
     }
 
+    /**
+     * Stop measuring
+     */
     static stop() {
         if (this.running) {
             const elapsed = performance.now() - this.start;
@@ -77,7 +99,20 @@ export class RenderTimer {
     }
 }
 
+/**
+ * Utility class that scrolls an element a predetermined distance by updating its `scrollTop` on a timer
+ */
 export class Scroller {
+    /**
+     * Start scrolling, will stop automatically when `distance` is reached
+     * @param {HTMLElement} element Element to scroll
+     * @param {Number} distance Target distance to scroll
+     * @param {Number} speed Initial scroll speed (px per update)
+     * @param {Number} maxSpeed Max scroll speed (px per update)
+     * @param {Number} acceleration Added to `speed` on each scroll, up to `maxSpeed`
+     * @param {Function} callback Callback to call when done scrolling
+     * @param {Function} scrollFn Function to call instead of setting `scrollTop` on the element
+     */
     static scroll({ element, distance = 50000, speed = 5, maxSpeed = 250, acceleration = .5, callback, scrollFn }) {
         let scrollTop = 0;
 
