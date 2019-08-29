@@ -7,6 +7,8 @@ async function init() {
     RenderTimer.start({
         callback() {
             const grid = new dhx.Grid('container', {
+                headerSort : false,
+
                 columns : [
                     { id : 'id', header : [{ text : 'Id' }], width : 100, pinned : 'left' },
                     { id : 'firstName', header : [{ text : 'First name' }], width : 130, pinned : 'left' },

@@ -1,8 +1,6 @@
 import { Grid } from './js/grid.module.js';
 import { RenderTimer, FPS, Scroller } from '../util/util.js';
 
-window.bryntum.DISABLE_DEBUG = true;
-
 async function init() {
     const response = await fetch('../util/10000.json');
     const json = await response.json();
@@ -12,9 +10,16 @@ async function init() {
             const grid = new Grid({
                 appendTo : 'container',
 
-                // features : {
-                //     group : 'city'
-                // },
+                // Bryntum Grid has many features enabled by default, turn them off to match others
+                features : {
+                    cellEdit      : false,
+                    columnPicker  : false,
+                    columnReorder : false,
+                    columnResize  : false,
+                    contextMenu   : false,
+                    group         : false,
+                    sort          : false
+                },
 
                 columns : [
                     { field : 'id', text : 'Id', width : 100, locked : true },
@@ -23,15 +28,15 @@ async function init() {
                     { field : 'city', text : 'City', width : 150 },
                     { field : 'age', text : 'Age', width : 100 },
                     {
-                        field : 'color',
-                        text : 'Color',
-                        width : 120,
+                        field    : 'color',
+                        text     : 'Color',
+                        width    : 120,
                         renderer : ({ value, cellElement }) => cellElement.style.backgroundColor = value
                     },
                     {
-                        field : 'score',
-                        text : 'Score',
-                        width : 120,
+                        field      : 'score',
+                        text       : 'Score',
+                        width      : 120,
                         htmlEncode : false,
                         //autoSyncHtml : true,
                         renderer({ value }) {
@@ -53,7 +58,10 @@ async function init() {
                     { field : 'rating', text : 'Rating', width : 90 }
                 ],
 
-                data : json
+                store : {
+                    useRawData : true,
+                    data       : json
+                }
             });
 
             setTimeout(() => {

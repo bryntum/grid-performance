@@ -20,10 +20,6 @@ async function init() {
                 columnFixing: {
                     enabled: true
                 },
-                editing: {
-                    mode: "cell",
-                    allowUpdating: true
-                },
                 columns: [
                     { dataField : 'id', caption : 'Id', width : 100, fixed : true },
                     { dataField : 'firstName', caption : 'First name', width : 130, fixed : true },
