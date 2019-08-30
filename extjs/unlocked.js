@@ -7,18 +7,16 @@ async function init() {
     Ext.onReady(() => {
         RenderTimer.start({
             callback() {
-                const grid = Ext.create('Ext.grid.LockedGrid', {
+                const grid = Ext.create('Ext.grid.Grid', {
                     store : {
                         fields : [{ name : 'start', type : 'date' }],
                         data
                     },
 
-                    scrollable : true,
-
                     columns : [
-                        { dataIndex : 'id', text : 'Id', width : 100, locked : true },
-                        { dataIndex : 'firstName', text : 'First name', width : 130, locked : true },
-                        { dataIndex : 'surname', text : 'Surname', width : 130, locked : true },
+                        { dataIndex : 'id', text : 'Id', width : 100 },
+                        { dataIndex : 'firstName', text : 'First name', width : 130 },
+                        { dataIndex : 'surname', text : 'Surname', width : 130 },
                         { dataIndex : 'city', text : 'City', width : 150 },
                         { dataIndex : 'age', text : 'Age', width : 100 },
                         {
@@ -68,7 +66,7 @@ async function init() {
                     FPS.start();
                     Scroller.scroll({
                         scrollFn(scrollTop) {
-                            grid.getRegion('center').getGrid().getScrollable().scrollTo(0, scrollTop, false);
+                            grid.getScrollable().scrollTo(0, scrollTop, false);
                         },
                         callback() {
                             FPS.stop();

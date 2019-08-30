@@ -37,7 +37,7 @@ export class FPS {
             'Average FPS 2' : average
         });
 
-        console.log(this.frames);
+        //console.log(this.frames);
     }
 
     // Internal function that counts animation frames
@@ -113,7 +113,7 @@ export class Scroller {
      * @param {Function} callback Callback to call when done scrolling
      * @param {Function} scrollFn Function to call instead of setting `scrollTop` on the element
      */
-    static scroll({ element, distance = 50000, speed = 5, maxSpeed = 250, acceleration = .5, callback, scrollFn }) {
+    static scroll({ element, distance = 50000, speed = 5, maxSpeed = 1000, acceleration = 1, callback, scrollFn }) {
         let scrollTop = 0;
 
         console.log('Starting to scroll', element);

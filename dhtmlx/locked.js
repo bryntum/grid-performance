@@ -10,9 +10,9 @@ async function init() {
                 headerSort : false,
 
                 columns : [
-                    { id : 'id', header : [{ text : 'Id' }], width : 100, pinned : 'left' },
-                    { id : 'firstName', header : [{ text : 'First name' }], width : 130, pinned : 'left' },
-                    { id : 'surname', header : [{ text : 'Surname' }], width : 130, pinned : 'left' },
+                    { id : 'id', header : [{ text : 'Id' }], width : 100 },
+                    { id : 'firstName', header : [{ text : 'First name' }], width : 130 },
+                    { id : 'surname', header : [{ text : 'Surname' }], width : 130 },
                     { id : 'city', header : [{ text : 'City' }], width : 150 },
                     { id : 'age', header : [{ text : 'Age' }], width : 100 },
                     {
