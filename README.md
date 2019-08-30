@@ -35,11 +35,11 @@ All measurements taken on a 2016 MacBook Pro 13-inch (2 GHz Intel Core i5, 8GB R
 
 | Grid       | L: Initial rendering | L: Average FPS | U: Initial rendering | U: Average FPS |
 |------------|----------------------|----------------|----------------------|----------------|
-| Ag-grid    | 225 ms               | 58 fps         | 225 ms               | 58 fps         |
-| Bryntum    | 115 ms               | 58 fps         | 115 ms               | 58 fps         |
-| DevExtreme | 250 ms               | 34 fps         | 250 ms               | 34 fps         |
-| DHTMLX     | 70 ms                | 20 fps         | 70 ms                | 20 fps         |
-| ExtJS      | 370 ms               | 45 fps         | 370 ms               | 45 fps         |
+| Ag-grid    | 219 ms               | 53 fps         | 210 ms               | 57 fps         |
+| Bryntum    | 112 ms               | 59 fps         | 104 ms               | 60 fps         |
+| DevExtreme | 256 ms               | 29 fps         | 216 ms               | 38 fps         |
+| DHTMLX     | 62 ms                | 19 fps         | 55 ms                | 25 fps         |
+| ExtJS      | 358 ms               | 54 fps         | 281 ms               | 59 fps         |
 
 L = With locked/pinned/fixed columns, U = Without
 
