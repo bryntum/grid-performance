@@ -1,4 +1,4 @@
-# JavaScript DataGrid performance comparison
+# JavaScript data grid performance comparison
 
 Performance comparison for JavaScript data grid components. Measures initial rendering time and scroll performance for 
 the following data grids:
