@@ -1,6 +1,6 @@
 # JavaScript data grid performance comparison
 
-Performance comparison for JavaScript data grid components. Measures initial rendering time and scroll performance for 
+A performance comparison of five popular JavaScript data grid components. Measures the initial rendering time and scroll performance for 
 the following data grids:
 
 * Ag-grid, https://www.ag-grid.com/
