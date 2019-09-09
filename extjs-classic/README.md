@@ -3,8 +3,8 @@
 ## Prerequisites
 
 1. Download ExtJS from https://www.sencha.com/products/extjs/
-2. Copy `theme-material-all.css`, `theme-material-all_1.css` and `theme-material-all_2.css` to the `css` folder
-3. Copy `ext-modern-all.js` to the `js` folder
+2. Copy `theme-classic-all.css`, `theme-classic-all_1.css` and `theme-classic-all_2.css` to the `css` folder
+3. Copy `ext-all.js` to the `js` folder
 
 ## Measure
 

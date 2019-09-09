@@ -8,6 +8,7 @@ the following data grids:
 * DevExtreme Grid, https://js.devexpress.com/Overview/DataGrid/ 
 * DHTMLX Grid, https://dhtmlx.com/docs/products/dhtmlxGrid/
 * ExtJS Modern Grid, https://www.sencha.com/products/extjs/
+* ExtJS Classic Grid, https://www.sencha.com/products/extjs/
 
 To set each grid up, please see the README.md files in the corresponding folders.
 
@@ -33,13 +34,14 @@ scroll distance was measured and used to calculate an average FPS value.
 
 All measurements taken on a 2016 MacBook Pro 13-inch (2 GHz Intel Core i5, 8GB RAM).
 
-| Grid       | L: Initial rendering | L: Average FPS | U: Initial rendering | U: Average FPS |
-|------------|----------------------|----------------|----------------------|----------------|
-| Ag-grid    | 219 ms               | 53 fps         | 210 ms               | 57 fps         |
-| Bryntum    | 112 ms               | 59 fps         | 104 ms               | 60 fps         |
-| DevExtreme | 256 ms               | 29 fps         | 216 ms               | 38 fps         |
-| DHTMLX     | 62 ms                | 19 fps         | 55 ms                | 25 fps         |
-| ExtJS      | 358 ms               | 54 fps         | 281 ms               | 59 fps         |
+| Grid          | L: Initial rendering | L: Average FPS | U: Initial rendering | U: Average FPS |
+|---------------|----------------------|----------------|----------------------|----------------|
+| Ag-grid       | 219 ms               | 53 fps         | 210 ms               | 57 fps         |
+| Bryntum       | 112 ms               | 59 fps         | 104 ms               | 60 fps         |
+| DevExtreme    | 256 ms               | 29 fps         | 216 ms               | 38 fps         |
+| DHTMLX        | 62 ms                | 19 fps         | 55 ms                | 25 fps         |
+| ExtJS Modern  | 358 ms               | 54 fps         | 281 ms               | 59 fps         |
+| ExtJS Classic |  ms                  |  fps           |  ms                  |  fps           |
 
 L = With locked/pinned/fixed columns, U = Without
 
