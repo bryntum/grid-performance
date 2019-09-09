@@ -41,7 +41,7 @@ All measurements taken on a 2016 MacBook Pro 13-inch (2 GHz Intel Core i5, 8GB R
 | DevExtreme    | 256 ms               | 29 fps         | 216 ms               | 38 fps         |
 | DHTMLX        | 62 ms                | 19 fps         | 55 ms                | 25 fps         |
 | ExtJS Modern  | 358 ms               | 54 fps         | 281 ms               | 59 fps         |
-| ExtJS Classic |  ms                  |  fps           |  ms                  |  fps           |
+| ExtJS Classic | 211 ms               | 44 fps         | 179 ms               | 44 fps         |
 
 L = With locked/pinned/fixed columns, U = Without
 
