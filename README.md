@@ -9,6 +9,7 @@ the following data grids:
 * DHTMLX Grid, https://dhtmlx.com/docs/products/dhtmlxGrid/
 * ExtJS Modern Grid, https://www.sencha.com/products/extjs/
 * ExtJS Classic Grid, https://www.sencha.com/products/extjs/
+* Componentator j-DataGrid, https://componentator.com/components/j-datagrid/
 
 To set each grid up, please see the README.md files in the corresponding folders.
 
@@ -42,6 +43,7 @@ All measurements taken on a 2016 MacBook Pro 13-inch (2 GHz Intel Core i5, 8GB R
 | DHTMLX        | 62 ms                | 19 fps         | 55 ms                | 25 fps         |
 | ExtJS Modern  | 358 ms               | 54 fps         | 281 ms               | 59 fps         |
 | ExtJS Classic | 211 ms               | 44 fps         | 179 ms               | 44 fps         |
+| Componentator |                      |                |                      |                |
 
 L = With locked/pinned/fixed columns, U = Without
 

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Componentator j-DataGrid - Unlocked columns</title>
+    <meta charset="utf-8"/>
+    <link href="https://cdn.componentator.com/spa.min@17.css" rel="stylesheet" type="text/css"/>
+    <script src="https://cdn.componentator.com/spa.min@17.js"></script>
+    <link rel="stylesheet" href="css/componentator.css">
+    <style>
+        #container {
+            width: 1280px;
+            height: 1024px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="container">
+    <div data---="directory"></div>
+    <div data---="datagrid__items">
+        <script type="text/plain">
+        [
+            { name : 'id', text : 'Id', width : 100 },
+            { name : 'firstName', text : 'First name', width : 130 },
+            { name : 'surname', text : 'Surname', width : 130 },
+            { name : 'city', text : 'City', width : 150 },
+            { name : 'age', text : 'Age', width : 100 },
+            { name : 'color', text : 'Color', width : 120, class : 'color-column', template : '<div style="background-color:{{color}}">{{color}}</div>' },
+            { name : 'score', text : 'Score', width : 120, class: 'score-column', template : '<div style="width : {{score/10}}%;background-color: blue;height : 3px;position: absolute;top: 0;left :0;"></div>{{score}}' },
+            { name : 'start', text : 'Start', width : 120, format: 'yyyy-MM-dd' },
+            { name : 'done', text : 'Done', width : 90, template: '{{ if done }}yes{{ else }}no{{ fi }}' },
+            { name : 'rating', text : 'Rating', width : 90 }
+        ]
+        </script>
+    </div>
+</div>
+
+<script type="module" src="unlocked.js"></script>
+
+</body>
+</html>
