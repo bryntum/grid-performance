@@ -165,6 +165,7 @@ export class TreeGenerator {
                     name : (leafs ? 'File ' : 'Folder ') + count,
                     parentId,
                     expanded : true,
+                    open : true,
                     number1 : count % 2,
                     number2 : count % 3,
                     number3 : count % 4,
