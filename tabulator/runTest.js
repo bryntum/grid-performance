@@ -18,6 +18,7 @@ export async function runTest(frozen) {
       sync: false,
       callback() {
         const table = new Tabulator("#container", {
+          data,
           height: "100%",
           columns: [
             { field: "id", title: "Id", width: 100, frozen },
@@ -73,11 +74,9 @@ export async function runTest(frozen) {
             { field: "rating", title: "Rating", width: 90 },
           ],
         });
-        table.on("tableBuilt", () => {
-          table.blockRedraw();
-          table.setData(data).then(() => {
-            table.restoreRedraw();
-            RenderTimer.stop();
+        table.on("dataProcessed", () => {
+          RenderTimer.stop();
+          {
             setTimeout(() => {
               FPS.start();
               Scroller.scroll({
@@ -87,7 +86,7 @@ export async function runTest(frozen) {
                 },
               });
             }, 500);
-          });
+          }
         });
       },
     });
